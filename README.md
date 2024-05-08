@@ -5,3 +5,9 @@
 ```sh
 bazel run :xcodeproj
 ```
+
+## Open xcodeproj
+
+```sh
+open iOSApp.xcodeproj
+```
