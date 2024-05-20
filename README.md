@@ -23,5 +23,5 @@ ERROR: Error computing the main repository mapping: no such package '@@crate_ind
 Execute
 
 ```sh
-CARGO_BAZEL_REPIN=1 bazel sync --only=crate_index
+CARGO_BAZEL_REPIN=true bazel run :xcodeproj
 ```
