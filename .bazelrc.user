@@ -1,2 +1,2 @@
-build --config macos_arm64
+build --config ios_arm64
 build -c opt

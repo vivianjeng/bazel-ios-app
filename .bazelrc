@@ -12,6 +12,12 @@ build:macos --crosstool_top=@local_config_apple_cc//:toolchain
 build:macos --host_crosstool_top=@local_config_apple_cc//:toolchain
 build:windows --cxxopt=/std:c++17
 build:windows --host_cxxopt=/std:c++17
+build:ios --cxxopt=-std=c++17
+build:ios --host_cxxopt=-std=c++17
+build:ios --objccopt=-std=c++17
+build:ios --apple_crosstool_top=@local_config_apple_cc//:toolchain
+build:ios --crosstool_top=@local_config_apple_cc//:toolchain
+build:ios --host_crosstool_top=@local_config_apple_cc//:toolchain
 
 build:macos_x86_64 --config=macos
 build:macos_x86_64 --cpu=darwin_x86_64
@@ -19,6 +25,9 @@ build:macos_x86_64 --host_cpu=darwin_x86_64
 build:macos_arm64 --config=macos
 build:macos_arm64 --cpu=darwin_arm64
 build:macos_arm64 --host_cpu=darwin_arm64
+build:ios_arm64 --config=ios
+build:ios_arm64 --cpu=darwin_arm64
+build:ios_arm64 --host_cpu=darwin_arm64
 
 # gmp needs exception.
 build --@kroma_network_tachyon//:has_exception
