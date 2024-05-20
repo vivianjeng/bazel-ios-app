@@ -1,5 +1,11 @@
 # iOS example app with tachyon
 
+## Initialization
+
+```sh
+git submodule update --init
+```
+
 ## How to run
 
 ```sh
