@@ -1,0 +1,2 @@
+build --config macos_arm64
+build -c opt

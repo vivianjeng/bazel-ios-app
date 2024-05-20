@@ -8,7 +8,6 @@ load(
 )
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test", "objc_library")
 
-
 ios_application(
     name = "iOSApp",
     bundle_id = "build.bazel.rules-apple-example",
@@ -19,7 +18,7 @@ ios_application(
     infoplists = ["Resources/Info.plist"],
     minimum_os_version = "17.0",
     visibility = ["//visibility:public"],
-    deps = ["//Sources:UI"],
+    deps = ["//Cpp:prover_main"],
 )
 
 xcodeproj(
