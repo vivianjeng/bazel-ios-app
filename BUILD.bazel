@@ -8,9 +8,19 @@ load(
 )
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test", "objc_library")
 
+package(default_visibility = ["//visibility:public"])
+
+platform(
+    name = "ios_arm64",
+    constraint_values = [
+        "@platforms//os:ios",
+        "@platforms//cpu:aarch64",
+    ],
+)
+
 ios_application(
     name = "iOSApp",
-    bundle_id = "build.bazel.rules-apple-example",
+    bundle_id = "com.vivianjeng.keccak256",
     families = [
         "iphone",
         "ipad",
@@ -19,6 +29,7 @@ ios_application(
     minimum_os_version = "17.0",
     visibility = ["//visibility:public"],
     deps = ["//Cpp:prover_main"],
+    provisioning_profile=":MoproExample_Keccak256.mobileprovision",
 )
 
 xcodeproj(
@@ -27,6 +38,6 @@ xcodeproj(
     project_name = "iOSApp",
     tags = ["manual"],
     top_level_targets = [
-        ":iOSApp"
+        top_level_target(":iOSApp", target_environments = ["device"]),
     ],
 )
